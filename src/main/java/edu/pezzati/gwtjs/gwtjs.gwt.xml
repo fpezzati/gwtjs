@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module rename-to='gwtjs'>
+	<inherits name='com.google.gwt.user.User' />
+	<inherits name='com.google.gwt.user.theme.clean.Clean' />
+	<extend-property name="locale" values="en" />
+	<extend-property name="locale" values="it" />
+	<set-property-fallback name="locale" value="it" />
+	<entry-point class='edu.pezzati.gwtjs.client.gwtjs' />
+	<source path='client' />
+</module>
