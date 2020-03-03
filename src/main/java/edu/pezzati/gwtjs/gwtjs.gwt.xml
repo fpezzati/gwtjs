@@ -7,4 +7,6 @@
 	<set-property-fallback name="locale" value="it" />
 	<entry-point class='edu.pezzati.gwtjs.client.gwtjs' />
 	<source path='client' />
+	<collapse-all-properties />
+	<add-linker name="sso" />
 </module>
