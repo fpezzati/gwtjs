@@ -1,3 +1,4 @@
+import './gwtjs/gwtjs.nocache.js';
 window.customElements.define('effort-component', class EffortComponent extends HTMLElement {
 	constructor() {
 		super();
