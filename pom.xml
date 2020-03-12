@@ -67,10 +67,12 @@
 						<goals>
 							<goal>compile</goal>
 						</goals>
+						<configuration>
+							<generateJsInteropExports>true</generateJsInteropExports>
+						</configuration>
 					</execution>
 				</executions>
 				<configuration>
-					<generateJsInteropExports>true</generateJsInteropExports>
 					<runTarget>gwtjs.html</runTarget>
 					<modules>
 						<module>edu.pezzati.gwtjs.gwtjs</module>
