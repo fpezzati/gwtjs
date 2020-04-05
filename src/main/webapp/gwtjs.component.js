@@ -1,21 +1,9 @@
 //import './gwtjs/gwtjs.nocache.js';
-/*
-function xhr_load(url, callback) {
-  var xhr = new XMLHttpRequest();
-  xhr.onreadystatechange = function() {
-    if (xhr.readyState == 4) {
-      if (xhr.status == 200) {
-        callback(xhr.responseText);
-      } 
-    }
-  }
-  xhr.open("GET", url, true);
-  xhr.send(null);
-}
 
-xhr_load('./gwtjs/gwtjs.nocache.js', function(response) {
-  eval(response.responseText);
-*/
+const template = document.createElement('template');
+template.innerHTML = `
+<button>check</button>
+`;
 
 var script = document.createElement("script");
 script.src = "./gwtjs/gwtjs.nocache.js";
@@ -26,12 +14,23 @@ window.customElements.define('effort-component', class EffortComponent extends H
 	constructor() {
 		super();
 		this._shadowRoot = this.attachShadow({ 'mode': 'open' });
+		this._shadowRoot.appendChild(template.content.cloneNode(true));
+		this.checkButton = this._shadowRoot.querySelector('button').addEventListener('click', this._initWidget.bind(this));
 	}
 
 	connectedCallback() {
     	console.log('connected!');
     	
-    	var actv1 = new edu.pezzati.gwtjs.client.provided.model.Activity;
+//    	this._xhr_load('./gwtjs/gwtjs.nocache.js', this, function(ctx, response) {
+//    		eval(response);
+//    		ctx._initWidget();
+//    	});
+    	
+//    	this._initWidget();
+    }
+	
+	_initWidget() {
+		var actv1 = new edu.pezzati.gwtjs.client.provided.model.Activity;
     	actv1.uuid = "1";
     	actv1.name = "foo";
     	actv1.description = "foo descr";
@@ -59,7 +58,18 @@ window.customElements.define('effort-component', class EffortComponent extends H
 		var effortTable = edu.pezzati.gwtjs.client.provided.EffortTable();
 		this._shadowRoot.appendChild(effortTable);
 		effortTable.refresh(model);
-    }
+	}
+	
+	_xhr_load(url, ctx, callback) {
+	  var xhr = new XMLHttpRequest();
+	  xhr.onreadystatechange = function() {
+	    if (xhr.readyState == 4) {
+	      if (xhr.status == 200) {
+	        callback(ctx, xhr.responseText);
+	      } 
+	    }
+	  }
+	  xhr.open("GET", url, true);
+	  xhr.send(null);
+	}
 });
-
-//});
