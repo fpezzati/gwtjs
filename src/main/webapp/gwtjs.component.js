@@ -56,7 +56,7 @@ window.customElements.define('effort-component', class EffortComponent extends H
     	model[1] = [eff1, eff2, eff3];
     	
 		var effortTable = edu.pezzati.gwtjs.client.provided.EffortTable();
-		this._shadowRoot.appendChild(effortTable);
+//		this._shadowRoot.appendChild(effortTable);
 		effortTable.refresh(model);
 	}
 	
