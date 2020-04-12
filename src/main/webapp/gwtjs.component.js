@@ -17,6 +17,8 @@ window.customElements.define('effort-component', class EffortComponent extends H
 		this._shadowRoot.appendChild(template.content.cloneNode(true));
 		this.checkButton = this._shadowRoot.querySelector('button').addEventListener('click', this._initWidget.bind(this));
 	}
+	
+	
 
 	connectedCallback() {
     	console.log('connected!');
@@ -27,6 +29,14 @@ window.customElements.define('effort-component', class EffortComponent extends H
 //    	});
     	
 //    	this._initWidget();
+    	
+    	window.addEventListener('load', function() {
+    		console.log('gwt has finished.');
+    	}, false);
+    	
+    	window.addEventListener('onload', function() {
+    		console.log('gwt finished (?) after an onload');
+    	});
     }
 	
 	_initWidget() {
