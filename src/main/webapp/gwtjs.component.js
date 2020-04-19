@@ -16,8 +16,16 @@ window.customElements.define('effort-component', class EffortComponent extends H
 		this._shadowRoot = this.attachShadow({ 'mode': 'open' });
 		this._shadowRoot.appendChild(template.content.cloneNode(true));
 		this.checkButton = this._shadowRoot.querySelector('button').addEventListener('click', this._initWidget.bind(this));
+		this.eventbus = {};
 	}
 	
+	get eventbus() {
+		return this.eventbus;
+	}
+	
+	set eventbus(obj) {
+		this.eventbus = obj;
+	}
 	
 
 	connectedCallback() {
