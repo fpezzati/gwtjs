@@ -24,7 +24,7 @@ window.customElements.define('effort-component', class EffortComponent extends H
 	}
 	
 	set eventbus(obj) {
-		this.eventbus = obj;
+//		this.eventbus = obj;
 	}
 	
 
@@ -73,9 +73,9 @@ window.customElements.define('effort-component', class EffortComponent extends H
     	model[0] = [actv1, actv2];
     	model[1] = [eff1, eff2, eff3];
     	
-		var effortTable = edu.pezzati.gwtjs.client.provided.EffortTable();
+		var effortApp = edu.pezzati.gwtjs.client.provided.EffortApp();
 //		this._shadowRoot.appendChild(effortTable);
-		effortTable.refresh(model);
+		effortApp.setModel(model);
 	}
 	
 	_xhr_load(url, ctx, callback) {

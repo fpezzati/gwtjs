@@ -22,4 +22,4 @@ Let's try to keep things simple. First, stackoverflowing around I found an [answ
 
 > The real fix would be to either use a custom linker, or setup a callback that you'll call from GWT's onModuleLoad.
 
-Ok. But what about my widget that I can't use?
+Ok, that could be a way to explore. But what about my widget that I can't use?

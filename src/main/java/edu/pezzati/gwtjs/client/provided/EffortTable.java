@@ -10,9 +10,7 @@ import com.google.gwt.user.client.ui.Widget;
 
 import edu.pezzati.gwtjs.client.provided.model.Activity;
 import edu.pezzati.gwtjs.client.provided.model.Effort;
-import jsinterop.annotations.JsType;
 
-@JsType
 public class EffortTable implements IsWidget {
 
 	private VerticalPanel basePanel;

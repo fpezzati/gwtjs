@@ -9,11 +9,14 @@ import com.google.gwt.user.client.ui.RootPanel;
 import edu.pezzati.gwtjs.client.provided.EffortTable;
 import edu.pezzati.gwtjs.client.provided.model.Activity;
 import edu.pezzati.gwtjs.client.provided.model.Effort;
+import jsinterop.annotations.JsMethod;
 
 public class gwtjs implements EntryPoint {
 
+	private EffortTable effortTable;
+
 	public void onModuleLoad() {
-		EffortTable effortTable = new EffortTable();
+		effortTable = new EffortTable();
 		List<Object> model = new ArrayList<Object>();
 		model.add(getActivities());
 		model.add(getEfforts());
@@ -69,5 +72,10 @@ public class gwtjs implements EntryPoint {
 		efforts.add(effort3);
 		efforts.add(effort4);
 		return efforts;
+	}
+	
+	@JsMethod
+	public void setModel(Object model) {
+		effortTable.refresh(model);
 	}
 }
