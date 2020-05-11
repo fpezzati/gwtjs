@@ -23,3 +23,7 @@ Let's try to keep things simple. First, stackoverflowing around I found an [answ
 > The real fix would be to either use a custom linker, or setup a callback that you'll call from GWT's onModuleLoad.
 
 Ok, that could be a way to explore. But what about my widget that I can't use?
+
+Well it turns out that problem was I miss a `new` keyword when instantiating my widget. So my code is visible and usable.
+
+Now problem is, how to pass a json object containing some `java.util.List`? Well, simply JSInterop does not mess with collections. I have to rewrite something.
