@@ -73,7 +73,7 @@ window.customElements.define('effort-component', class EffortComponent extends H
     	model[0] = [actv1, actv2];
     	model[1] = [eff1, eff2, eff3];
     	
-		var effortApp = edu.pezzati.gwtjs.client.provided.EffortApp();
+		var effortApp = new edu.pezzati.gwtjs.client.provided.EffortApp();
 //		this._shadowRoot.appendChild(effortTable);
 		effortApp.setModel(model);
 	}
